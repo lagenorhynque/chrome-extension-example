@@ -4,7 +4,8 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.494"]]
+                 [org.clojure/clojurescript "1.9.494"]
+                 [jayq "2.5.4"]]
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-resource "16.9.1"]]
   :resource {:resource-paths ["resources"]
@@ -16,4 +17,4 @@
                       :compiler
                       {:main chrome-extension-example.core
                        :output-to "target/chrome-extension-example/js/main.js"
-                       :optimizations :advanced}}}})
+                       :optimizations :simple}}}})

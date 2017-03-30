@@ -1,6 +1,12 @@
-(ns chrome-extension-example.core)
+(ns chrome-extension-example.core
+  (:require [jayq.core :refer [$ html]]))
 
-(defn ^:export hello []
-  (js/alert "Hello, world!"))
+(defn handler []
+  (.getSelected (.-tabs js/chrome) nil (fn [tab]
+                                         (set! (.-innerHTML (.getElementById js/document "title"))
+                                               (.-title tab))
+                                         (set! (.-innerHTML (.getElementById js/document "url"))
+                                               (.-url tab)))))
 
-(set! (.-onload js/window) hello)
+(let [b (.getElementById js/document "button")]
+  (.addEventListener b "click" handler false))
