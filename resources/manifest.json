@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "chrome-extension-example",
+  "version": "0.1",
+  "description": "Hello, world!",
+  "icons": {
+    "16": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.co.jp/"
+      ],
+      "js": [
+        "js/main.js"
+      ]
+    }
+  ]
+}
