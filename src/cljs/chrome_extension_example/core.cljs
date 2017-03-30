@@ -1,5 +1,5 @@
-(ns chrome-extension-example.core
-  (:require [jayq.core :refer [$ html]]))
+(ns chrome-extension-example.core)
+  ; (:require [jayq.core :refer [$ html]]))
 
 (defn handler []
   (.getSelected (.-tabs js/chrome) nil (fn [tab]
