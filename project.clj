@@ -17,4 +17,6 @@
                       :compiler
                       {:main chrome-extension-example.core
                        :output-to "target/chrome-extension-example/js/main.js"
-                       :optimizations :simple}}}})
+                       :optimizations :advanced
+                       :externs ["externs/externs.js"
+                                 "externs/jquery-3.1.js"]}}}})
